@@ -1,4 +1,6 @@
 import 'package:dartz/dartz.dart';
+import 'package:ditonton/domain/entities/tv.dart';
+import 'package:ditonton/domain/usecases/get_tv_airing_today.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
@@ -11,7 +13,7 @@ void main() {
     useCase = GetTvAiringToday(mockTvRepository);
   });
 
-  final tTvList = <TV>[];
+  final tTvList = <Tv>[];
 
   test('should get tv airing today list from the repository', () async {
     //arrange
