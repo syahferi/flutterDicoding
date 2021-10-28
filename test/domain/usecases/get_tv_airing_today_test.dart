@@ -4,6 +4,8 @@ import 'package:ditonton/domain/usecases/get_tv_airing_today.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
+import '../../helpers/test_helper.mocks.dart';
+
 void main() {
   late GetTvAiringToday useCase;
   late MockTvRepository mockTvRepository;
