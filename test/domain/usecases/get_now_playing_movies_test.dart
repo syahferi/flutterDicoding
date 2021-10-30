@@ -11,8 +11,8 @@ void main() {
   late MockMovieRepository mockMovieRepository;
 
   setUp(() {
-    mockMovieRepository = MockMovieRepository();
-    usecase = GetNowPlayingMovies(mockMovieRepository);
+    mockMovieRepository = MockMovieRepository(); //mock
+    usecase = GetNowPlayingMovies(mockMovieRepository); //mock
   });
 
   final tMovies = <Movie>[];
@@ -20,7 +20,7 @@ void main() {
   test('should get list of movies from the repository', () async {
     // arrange
     when(mockMovieRepository.getNowPlayingMovies())
-        .thenAnswer((_) async => Right(tMovies));
+        .thenAnswer((_) async => Right(tMovies)); //stub
     // act
     final result = await usecase.execute();
     // assert

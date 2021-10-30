@@ -24,6 +24,8 @@ import 'package:ditonton/presentation/provider/watchlist_movie_notifier.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
 
+import 'data/repositories/tv_repository_impl.dart';
+
 final locator = GetIt.instance;
 
 void init() {
@@ -86,7 +88,7 @@ void init() {
     ),
   );
   locator.registerLazySingleton<TvRepository>(
-    () => TvRepositoryImpl(remoteDataSource: locator()),
+    () => TvRepositoryImpl(tvRemoteDataSource: locator()),
   );
 
   // data sources
